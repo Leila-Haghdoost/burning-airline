@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  flight_number: MyText
+  origin: MyText
+  destination: MyText
+  date: 2018-10-30
+  plane: MyText
+
+two:
+  flight_number: MyText
+  origin: MyText
+  destination: MyText
+  date: 2018-10-30
+  plane: MyText
