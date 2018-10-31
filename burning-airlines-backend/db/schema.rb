@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2018_10_31_054000) do
 
   create_table "planes", force: :cascade do |t|
     t.string "name"
-    t.integer "rows"
     t.integer "columns"
+    t.integer "rows"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
