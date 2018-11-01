@@ -5,7 +5,8 @@ class CreateFlights < ActiveRecord::Migration[5.2]
       t.date :date
       t.string :origin
       t.string :destination
-      t.string :plane
+      t.string :name
+
 
       t.timestamps
     end

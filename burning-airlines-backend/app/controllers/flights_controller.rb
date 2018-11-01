@@ -4,14 +4,21 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
-    @flights = Flight.all
-    @planes = Plane.all
-    render json: {:flights => @flights, :planes => @planes}
+    # NOTE: actually using this as a SEARCH route for now
+    # render json: Flight.all
+
+    puts "ORIGIN: #{ params[:origin] }"
+    puts "DESTINATION: #{ params[:destination] }"
+
+    results = Flight.where origin: params[:origin], destination: params[:destination]
+
+    render json: results
   end
 
   # GET /flights/1
   # GET /flights/1.json
   def show
+    render json: Flight.find( params[:id] ), include: [:plane, :reservations]
   end
 
   # GET /flights/new

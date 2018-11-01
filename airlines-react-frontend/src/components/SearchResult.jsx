@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
-const URL = 'https://api.myjson.com/bins/p5b2y'
+const URL = 'http://localhost:3000/flights.json';
 
 class SearchResult extends Component {
 
@@ -16,7 +16,10 @@ class SearchResult extends Component {
 
   fetchFlights(){
   // get the current list of Flights from the server
-  axios.get( URL )
+    axios.get( URL, { params: {
+      origin: this.props.match.params.origin,
+      destination: this.props.match.params.destination
+    } })
     .then( response => {
       console.log( response );
       this.setState({ flights: response.data });
@@ -30,6 +33,9 @@ class SearchResult extends Component {
     return(
       <div>
         <h2>Flight Search Results</h2>
+        <h3>Origin: { this.props.match.params.origin } </h3>
+        <h3>Destination: { this.props.match.params.destination } </h3>
+        <h3>ID: {this.props.match.params.id}</h3>
         <table>
           <thead>
             <tr>

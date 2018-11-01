@@ -18,6 +18,7 @@ puts Plane.pluck(:name).join(', ')
 
 Flight.destroy_all
 f1 = Flight.create flightnum: "A001", date: "2018/01/06", origin:'Paris', destination: "Spain", plane_id: a1.id
+f11 = Flight.create flightnum: "A0011", date: "2018/01/07", origin:'Paris', destination: "Spain", plane_id: a1.id
 f2 = Flight.create flightnum: "B002", date: "2018/01/07", origin:'Dubai', destination: "Italy", plane_id: a2.id
 f3 = Flight.create flightnum: "C003", date: "2018/01/08", origin:'London', destination: "Brazil", plane_id: a1.id
 f4 = Flight.create flightnum: "D004", date: "2018/01/09", origin:'Dubai', destination: "New Zealand", plane_id: a3.id
@@ -46,6 +47,7 @@ r2 = Reservation.create user_id: u1.id, row: 2, column: 3, flight_id: f2.id
 r3 = Reservation.create user_id: u2.id, row: 3, column: 3, flight_id: f3.id
 r4 = Reservation.create user_id: u2.id, row: 4, column: 3, flight_id: f4.id
 r5 = Reservation.create user_id: u4.id, row: 5, column: 4, flight_id: f5.id
+r5 = Reservation.create user_id: u4.id, row: 5, column: 4, flight_id: f11.id
 
 puts "Created #{Reservation.all.length} reservations."
 
