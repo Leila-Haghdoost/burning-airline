@@ -5,6 +5,8 @@ class FlightsController < ApplicationController
   # GET /flights.json
   def index
     @flights = Flight.all
+    @planes = Plane.all
+    render json: {:flights => @flights, :planes => @planes}
   end
 
   # GET /flights/1
@@ -35,6 +37,8 @@ class FlightsController < ApplicationController
         format.json { render json: @flight.errors, status: :unprocessable_entity }
       end
     end
+
+
   end
 
   # PATCH/PUT /flights/1
